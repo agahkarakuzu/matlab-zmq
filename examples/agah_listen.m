@@ -8,6 +8,7 @@ address = 'ipc:///tmp/rth2qmrlab';
 
 zmq.core.connect(socket, address);
 
+message = [];
 while (numel(message)==0)
 
     message = char(zmq.core.recv(socket));
