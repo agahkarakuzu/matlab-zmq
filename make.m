@@ -210,7 +210,7 @@ function compile(flags, file, outputdir)
     % Inexplicably just using quotes (`sprintf('"%s"', outputfile)` or
     % `['"' outputfile '"']` ) does not work on Windows, even when there are not
     % whitespaces.
-    mex('-largeArrayDims', '-O', flags{:}, deps{:}, file, '-output', outputfile);
+    mex('-v','GCC=/usr/bin/gcc-4.9','-lzmq','-largeArrayDims', '-O', flags{:}, deps{:}, file, '-output', outputfile);
   end
 end
 
