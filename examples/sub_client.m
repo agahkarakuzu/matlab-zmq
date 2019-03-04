@@ -22,7 +22,7 @@ function sub_client(varargin)
 
     % Subscribe to the first weather server
     fprintf('Collecting updates from weather server...\n');
-    address = sprintf('tcp://localhost:%d', port);
+    address = 'ipc:///tmp/deneme';
     zmq.core.connect(socket, address);
 
     if (nargin > 1)
@@ -47,7 +47,7 @@ function sub_client(varargin)
         fprintf('%s %s\n', topic, data);
     end
 
-    fprintf('\nAverage temperature for region with CEP starting with ''%s'' was:\n\n%gºC\n', topicfilter, total/update);
+    fprintf('\nAverage temperature for region with CEP starting with ''%s'' was:\n\n%gï¿½C\n', topicfilter, total/update);
 
     zmq.core.disconnect(socket, address);
     if (nargin > 1)

@@ -15,7 +15,7 @@ function pub_server(varargin)
 
     context = zmq.core.ctx_new();
     socket = zmq.core.socket(context, 'ZMQ_PUB');
-    zmq.core.bind(socket, sprintf('tcp://*:%d', port));
+    zmq.core.bind(socket, 'ipc:///tmp/deneme');
 
     fprintf('Broadcasting temperature information...\n');
     while (1)
