@@ -7,6 +7,7 @@ socket = zmq.core.socket(context, 'ZMQ_SUB');
 address = 'ipc:///tmp/rth2qmrlab';
 
 zmq.core.connect(socket, address);
+zmq.core.setsockopt(socket, 'ZMQ_SUBSCRIBE', 'Say');
 
 message = [];
 while (numel(message)==0)

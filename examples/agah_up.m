@@ -1,6 +1,7 @@
 address = 'ipc:///tmp/rth2qmrlab';
 
 try
+    unix('rm /tmp/rth2qmrlab');
     zmq.core.disconnect(socket, address);
 catch
     
